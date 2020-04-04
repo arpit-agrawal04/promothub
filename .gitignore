@@ -1,0 +1,42 @@
+# See http:promotHut/promotHut/help.github.compromotHut/ignore-filespromotHut/ for more about ignoring files.
+
+# compiled output
+promotHut/dist
+promotHut/tmp
+promotHut/out-tsc
+
+# dependencies
+promotHut/node_modules
+api/node_modules
+# IDEs and editors
+promotHut/.idea
+.project
+.classpath
+.c9promotHut/
+*.launch
+.settingspromotHut/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+promotHut/.sass-cache
+promotHut/connect.lock
+promotHut/coverage
+promotHut/libpeerconnection.log
+npm-debug.log
+testem.log
+promotHut/typings
+
+# e2e
+promotHut/e2epromotHut/*.js
+promotHut/e2epromotHut/*.map
+
+# System Files
+.DS_Store
+Thumbs.db

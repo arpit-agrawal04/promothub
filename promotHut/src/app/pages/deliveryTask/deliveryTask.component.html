@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card demo-icons">
+      <div class=" row card-header">
+        <h5 class="card-title">   &nbsp;&nbsp; Orderomer List</h5>
+      </div>
+<div  class="card-body">
+  <div class="table-responsive">
+    <table class="table">
+      <thead class=" text-primary">
+        <th>
+          Order ID
+        </th>
+        <th>
+          Customer
+        </th>
+        <th>
+         Status
+        </th>
+        <th>
+          date And time
+          </th>
+        <th>
+         Address
+        </th>
+      
+        <th class="text-right">
+         Action
+          </th>
+       
+      </thead>
+      <tbody>
+        <tr *ngFor="let Order of OrderArray">
+          <td>
+           {{Order.orderId}}
+          </td>
+          <td [title]="'Name : '+Order.customer.fName+' '+Order.customer.lName">
+            
+            {{Order.customer.phone}}
+    
+          </td>
+          <td>
+            <span *ngIf="Order.status==undefined">Pickup Pending</span>
+            <span *ngIf="Order.status!==undefined">{{Order.status}}</span>
+          </td>
+          <td>
+            <span *ngIf="editAble==Order.orderId && Order.status==undefined"><form [formGroup]="resheduleForm"><input formControlName="pickupDate" type="date"> <input formControlName="pickupTime" type="time"> <button type="submit" (click)="update(Order.orderId)" class="btn btn-primary btn-round">update</button>  <button type="button" (click)="cancel(Order.orderId)" class="btn btn-default btn-round">cancle Order</button> </form></span>
+            <span *ngIf="editAble!==Order.orderId">  {{Order.pickupDate | date:'dd/MM/yy'}} {{Order.pickupTime }}</span>
+           </td>
+          <td >
+            {{Order.add+','+Order.city}}
+           
+          
+          </td>
+        
+          <td class="text-right"><b style="cursor: pointer;" (click)="reached(Order.orderId)">Reached &nbsp;</b> <b  style="cursor: pointer;" (click)='reschedule(Order.orderId,Order.pickupDate,Order.pickupTime)' >Reschedule</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,100 @@
+.tabActive {
+    background-color: black;
+    color: white;
+    border: 9px solid white;
+    border-color: white;
+    height: 53px;
+    font-size: 24px;
+    margin-top: -2px !important;
+    text-align: center;
+}
+.suggestiveBox {
+    position: absolute;
+    z-index: 20 !important;
+    background-color: white;
+    padding: 2%;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 2%;
+    cursor: pointer;
+}
+.logo_hut {
+    width: 22%;
+margin-left: 9%;
+}
+.header{
+    padding: 1%;
+    background: linear-gradient(-135deg, #c850c0, #4158d0);
+}
+.navBarHut {
+    font-size: 25px;
+    padding: 3%;
+    color: white;
+    cursor: pointer;
+}
+.fixedHeader{
+    width: 102%;
+    position:fixed;
+    z-index: 500;
+}
+.page_promothut{
+padding: 4%;
+background-color: #e6e6e6;
+    }
+.header_space{
+        height: 100px;
+    }
+h3, .h3 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            line-height: 1.4em;
+            color: #7b7b7b;
+        }
+h1, .h1 {
+            font-size: 6.5em;
+            line-height: 1.15;
+            margin-bottom: 30px;
+        }
+
+        .modalDesign {
+            height: 500px;
+           
+        }
+        .modalBody{
+            padding: 3%;
+            text-align: center;
+            width: 100%;
+        }
+        .modalHeader{
+            background: linear-gradient(-135deg, #c850c0, #4158d0);
+            color: white;
+            padding: 1%;
+            height: 40px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .footerBody{
+            bottom: 0 !important;
+            background-color: #f0efef;
+            height: 70px;
+            position: absolute;
+            width: 100%;
+            padding: 1%;
+        
+        }
+        .progressbar{
+            height: 345px;
+width: 35px;
+background-color: #e3dfdf47;
+border: 2px solid #dfdfdf;
+        }
+        .progress1{
+            width: 31px;
+            height: 30px;
+            background: linear-gradient(-135deg, #c850c0, #4158d0);
+        }
+        .progress2{
+            width: 31px;
+            height: 100px;
+            background: linear-gradient(-135deg, #c850c0, #4158d0);
+        }

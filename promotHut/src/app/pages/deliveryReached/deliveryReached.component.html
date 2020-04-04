@@ -1,0 +1,241 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card demo-icons">
+      <div class="card-header">
+        <h5 *ngIf="!readOnly" class="card-title">+ Add new order</h5>
+        <h5 *ngIf="readOnly" class="card-title">Edit order</h5>
+      </div>
+      <div class="card-body all-icons">
+        <div id="icons-wrapper">
+          <form [formGroup]="orderForm">
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>Phone Number </label>
+                  <input type="text" formControlName="phone" [readonly]='readOnly' list="customers" class="form-control" placeholder="Phone No." >
+                </div>
+                <div *ngIf="control.phone.errors && control.phone.touched">
+                  <span *ngIf="control.phone.errors.required">
+                    Required
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Order ID </label>
+                  <input type="text" formControlName="orderId" [readonly]='readOnly' list="customers" class="form-control" placeholder="Phone No." >
+                </div>
+                <div *ngIf="control.phone.errors && control.phone.touched">
+                  <span *ngIf="control.phone.errors.required">
+                    Required
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>First Name</label>
+                   <input type="text" [readonly]='readOnly' formControlName="fName"class="form-control" placeholder="First Name">
+                </div>
+                <div *ngIf="control.fName.errors && control.fName.touched">
+                  <span *ngIf="control.fName.errors.required">
+                     Required
+                  </span>
+                 
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Last Name</label>
+                   <input type="text" [readonly]='readOnly' formControlName="lName"class="form-control" placeholder="Last Name" >
+                </div>
+                <div *ngIf="control.lName.errors && control.lName.touched">
+                  <span *ngIf="control.lName.errors.required">
+                     Required
+                  </span>
+                 
+                </div>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Remarks</label>
+                  <textarea formControlName="remark" class="form-control textarea"></textarea>
+                </div>
+                <div *ngIf="control.remark.errors && control.remark.touched">
+                  <span *ngIf="control.remark.errors.required">
+                     Required
+                  </span>
+                 
+                 
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 pr-1">
+                <div   class="form-group">
+                  <label>Dry Clean &nbsp;</label>
+                   <input type="checkbox" style="float:right;margin-right: 17px;" formControlName="dryClean">
+                </div>
+              
+              </div>
+              <form *ngIf="orderForm.controls.dryClean.value" class="col-md-9 pl-1 row " [formGroup]="dryCleanForm">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Cloth Count  &nbsp;</label>
+                    <input type="number" formControlName="clothCount" style="border: 2px solid #e3e3e3;" class=""  placeholder="Cloth Count">
+                  </div>
+                  <div *ngIf="dryCleanForm.controls.clothCount.errors && dryCleanForm.controls.clothCount.touched">
+                    <span *ngIf="dryCleanForm.controls.clothCount.errors.required">
+                       Required
+                    </span>
+                   
+                   
+                  </div>
+                </div>
+                <div class="col-md-6 ">
+                  <div class="form-group">
+                    <label>Cloth Weight(kg) &nbsp;</label>
+                    <input type="number" formControlName="clothWeight" style="border: 2px solid #e3e3e3;" class="" placeholder="Cloth Weight(kg)">
+                  </div>
+                  <div *ngIf="dryCleanForm.controls.clothWeight.errors && dryCleanForm.controls.clothWeight.touched">
+                    <span *ngIf="dryCleanForm.controls.clothWeight.errors.required">
+                       Required
+                    </span>
+                   
+                   
+                  </div>
+                </div>
+              </form>
+              
+            </div>
+            <div class="row">
+              
+              <div class="col-md-3 pr-1">
+                <div class="form-group">
+                  <label>Wash and Iron &nbsp;</label>
+                   <input type="checkbox" style="float:right;margin-right: 17px;" formControlName="washIron" >
+                </div>
+                <div *ngIf="control.washIron.errors && control.washIron.touched">
+                  <span *ngIf="control.washIron.errors.required">
+                     Required
+                  </span>
+                 
+                </div>
+              </div>
+              <form *ngIf="orderForm.controls.washIron.value" class="col-md-9 pl-1 row " [formGroup]="washIronForm">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Cloth Count  &nbsp;</label>
+                    <input type="number" formControlName="clothCount" style="border: 2px solid #e3e3e3;" class=""  placeholder="Cloth Count">
+                  </div>
+                
+                </div>
+                <div class="col-md-6 ">
+                  <div class="form-group">
+                    <label>Cloth Weight(kg) &nbsp;</label>
+                    <input type="number" formControlName="clothWeight" style="border: 2px solid #e3e3e3;" class="" placeholder="Cloth Weight(kg)">
+                  </div>
+                  <div *ngIf="washIronForm.controls.clothWeight.errors && washIronForm.controls.clothWeight.touched">
+                    <span *ngIf="washIronForm.controls.clothWeight.errors.required">
+                       Required
+                    </span>
+                   
+                   
+                  </div>
+                </div>
+              </form>
+              
+    
+            </div>
+            <div class="row">
+            
+              <div class="col-md-3 pr-1">
+                <div class="form-group">
+                  <label>Wash &nbsp;</label>
+                   <input type="checkbox" style="float:right;margin-right: 17px;" formControlName="washFold">
+                </div>
+              
+              </div>
+              <form *ngIf="orderForm.controls.washFold.value" class="col-md-9 pl-1 row " [formGroup]="washFoldForm">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Cloth Count  &nbsp;</label>
+                    <input type="number" formControlName="clothCount" style="border: 2px solid #e3e3e3;" class=""  placeholder="Cloth Count">
+                  </div>
+                  <div *ngIf="washFoldForm.controls.clothCount.errors && washFoldForm.controls.clothCount.touched">
+                    <span *ngIf="washFoldForm.controls.clothCount.errors.required">
+                       Required
+                    </span>
+                   
+                   
+                  </div>
+                </div>
+                <div class="col-md-6 ">
+                  <div class="form-group">
+                    <label>Cloth Weight(kg) &nbsp;</label>
+                    <input type="number" formControlName="clothWeight" style="border: 2px solid #e3e3e3;" class="" placeholder="Cloth Weight(kg)">
+                  </div>
+                  <div *ngIf="washFoldForm.controls.clothWeight.errors && washFoldForm.controls.clothWeight.touched">
+                    <span *ngIf="washFoldForm.controls.clothWeight.errors.required">
+                       Required
+                    </span>
+                   
+                   
+                  </div>
+                </div>
+              </form>
+              
+            </div>
+            <div class="row">
+              <div class="col-md-3 pr-1">
+                <div class="form-group">
+                  <label>  Iron</label>
+                   <input type="checkbox" style="float:right;margin-right: 17px;" formControlName="ironFold">
+                </div>
+              
+              </div>
+              <form *ngIf="orderForm.controls.ironFold.value" class="col-md-9 pl-1 row" [formGroup]="ironFoldForm">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Cloth Count  &nbsp;</label>
+                    <input type="number" formControlName="clothCount" style="border: 2px solid #e3e3e3;" class=""  placeholder="Cloth Count">
+                  </div>
+                  <div *ngIf="ironFoldForm.controls.clothCount.errors && ironFoldForm.controls.clothCount.touched">
+                    <span *ngIf="ironFoldForm.controls.clothCount.errors.required">
+                       Required
+                    </span>
+                   
+                   
+                  </div>
+                </div>
+                <div class="col-md-6 ">
+                  <div class="form-group">
+                    <label>Cloth Weight(kg) &nbsp;</label>
+                    <input type="number" formControlName="clothWeight" style="border: 2px solid #e3e3e3;" class="" placeholder="Cloth Weight(kg)">
+                  </div>
+                  <div *ngIf="ironFoldForm.controls.clothWeight.errors && ironFoldForm.controls.clothWeight.touched">
+                    <span *ngIf="ironFoldForm.controls.clothWeight.errors.required">
+                       Required
+                    </span>
+                   
+                   
+                  </div>
+                </div>
+              </form>
+              
+            </div>
+            <div class="row">
+              <div class="update ml-auto mr-auto">
+                <button type="submit" [disabled]='DisableSubmit' (click)="SignUser()" class="btn btn-primary btn-round">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

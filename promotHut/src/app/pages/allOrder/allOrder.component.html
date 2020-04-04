@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card demo-icons">
+      <div class=" row card-header">
+        <h5 class="card-title">   &nbsp;&nbsp; Orderomer List</h5>
+      </div>
+<div  class="card-body">
+  <div class="table-responsive">
+    <table class="table">
+      <thead class=" text-primary">
+        <th>
+          Order ID
+        </th>
+        <th>
+          Customer
+        </th>
+        <th>
+         Status
+        </th>
+        <th>
+           Last update at
+          </th>
+        <th>
+          Ass. Staff
+        </th>
+        <th>
+        Order date
+        </th>
+        <th class="text-right">
+         Action
+          </th>
+       
+      </thead>
+      <tbody>
+        <tr *ngFor="let Order of OrderArray">
+          <td>
+           {{Order.orderId}}
+          </td>
+          <td [title]="'Name : '+Order.customer.fName">
+            
+            {{Order.customer.phone}}
+    
+          </td>
+          <td>
+            <span *ngIf="Order.status==undefined">Pickup Pending</span>
+            <span *ngIf="Order.status!==undefined">{{Order.status}}</span>
+          </td>
+          <td>{{Order.StatusUpdatedAt | date:'short'}}</td>
+          <td >
+            <span [title]="'Email ID : '+Order.deliveryBoy.email">  {{Order.deliveryBoy.phone}}
+            </span>
+           
+          
+          </td>
+          <td>{{Order.createdAt | date:'short'}}</td>
+          <td class="text-right"><b style="cursor: pointer;" *ngIf="Order.status==undefined" (click)="editOrder(Order.orderId)">Edit &nbsp;</b>  <b  style="cursor: pointer;" (click)='deleteOrder(Order.orderId)' *ngIf="Order.status==undefined" >Cancel</b><b  style="cursor:not-allowed;" *ngIf="Order.status!=undefined" >Edit  &nbsp;</b><b  style="cursor:not-allowed;" *ngIf="Order.status!=undefined" >Cancel</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</div>
+</div>

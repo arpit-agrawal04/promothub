@@ -1,0 +1,240 @@
+<div class="row" style="background: linear-gradient(-135deg, #c850c0, #4158d0);">
+    <div style="
+      margin: 40px auto;
+    " class="col-md-8">
+      <div class="card card-user">
+        <div class="card-header">
+          <h5 class="card-title">Create Profile</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="signupForm">
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Company </label>
+                  <input type="text" formControlName="compny" class="form-control" placeholder="Company" >
+                </div>
+                <div *ngIf="control.compny.errors && control.compny.touched">
+                  <span *ngIf="control.compny.errors.required">
+                    Required
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-3 px-1">
+                <div class="form-group">
+                  <label>Website</label>
+                   <input type="text" formControlName="website"class="form-control" placeholder="Website">
+                </div>
+                <div *ngIf="control.website.errors && control.website.touched">
+                  <span *ngIf="control.website.errors.required">
+                     Required
+                  </span>
+          
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label>Email</label>
+                   <input type="text" formControlName="email"class="form-control" placeholder="Email">
+                </div>
+                <div *ngIf="control.email.errors && control.email.touched">
+                  <span *ngIf="control.email.errors.required">
+                     Required
+                  </span>
+                  <span *ngIf="control.email.errors.email">
+                     Not a Valid Input
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>First Name</label>
+                   <input type="text" formControlName="fName"class="form-control" placeholder="First Name">
+                </div>
+                <div *ngIf="control.fName.errors && control.fName.touched">
+                  <span *ngIf="control.fName.errors.required">
+                     Required
+                  </span>
+                 
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Last Name</label>
+                   <input type="text" formControlName="lName"class="form-control" placeholder="Last Name" >
+                </div>
+                <div *ngIf="control.lName.errors && control.lName.touched">
+                  <span *ngIf="control.lName.errors.required">
+                     Required
+                  </span>
+                 
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Address</label>
+                   <input type="text" formControlName="add"class="form-control" placeholder="Home Address" >
+                </div>
+                <div *ngIf="control.add.errors && control.add.touched">
+                  <span *ngIf="control.add.errors.required">
+                     Required
+                  </span>
+              
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>City</label>
+                   <input type="text" formControlName="city"class="form-control" placeholder="City">
+                </div>
+                <div *ngIf="control.city.errors && control.city.touched">
+                  <span *ngIf="control.city.errors.required">
+                     Required
+                  </span>
+                 
+  
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label>Country</label>
+                   <input type="text" formControlName="country"class="form-control" placeholder="Country" >
+                </div>
+                <div *ngIf="control.country.errors && control.country.touched">
+                  <span *ngIf="control.country.errors.required">
+                     Required
+                  </span>
+              
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label>Postal Code</label>
+                  <input type="number" formControlName="zipCode" class="form-control" placeholder="ZIP Code">
+                </div>
+                <div *ngIf="control.zipCode.errors && control.zipCode.touched">
+                  <span *ngIf="control.zipCode.errors.required">
+                     Required
+                  </span>
+                 
+                 
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>About Me</label>
+                  <textarea formControlName="about" class="form-control textarea"></textarea>
+                </div>
+                <div *ngIf="control.about.errors && control.about.touched">
+                  <span *ngIf="control.about.errors.required">
+                     Required
+                  </span>
+                 
+                 
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 pr-1">
+                <div class="form-group">
+                  <label>Dry Clean &nbsp;</label>
+                   <input type="checkbox" formControlName="dryClean">
+                </div>
+                <div *ngIf="control.dryClean.errors && control.dryClean.touched">
+                  <span *ngIf="control.dryClean.errors.required">
+                     Required
+                  </span>
+                 
+                </div>
+              </div>
+              <div class="col-md-3 pr-1">
+                <div class="form-group">
+                  <label>Wash and Iron &nbsp;</label>
+                   <input type="checkbox" formControlName="washIron" >
+                </div>
+                <div *ngIf="control.washIron.errors && control.washIron.touched">
+                  <span *ngIf="control.washIron.errors.required">
+                     Required
+                  </span>
+                 
+                </div>
+              </div>
+              <div class="col-md-3 pr-1">
+                <div class="form-group">
+                  <label>Wash &nbsp;</label>
+                   <input type="checkbox" formControlName="washFold">
+                </div>
+                <div *ngIf="control.washFold.errors && control.washFold.touched">
+                  <span *ngIf="control.washFold.errors.required">
+                     Required
+                  </span>
+                 
+                </div>
+              </div>
+              <div class="col-md-3 pr-1">
+                <div class="form-group">
+                  <label>Iron &nbsp;</label>
+                   <input type="checkbox" formControlName="ironFold">
+                </div>
+                <div *ngIf="control.ironFold.errors && control.ironFold.touched">
+                  <span *ngIf="control.ironFold.errors.required">
+                     Required
+                  </span>
+                 
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>Password</label>
+                   <input type="password" formControlName="password"class="form-control" placeholder="Password">
+                </div>
+                <div *ngIf="control.password.errors && control.password.touched">
+                  <span *ngIf="control.password.errors.required">
+                     Required
+                  </span>
+                 
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label>Confirm Password</label>
+                   <input type="password" formControlName="cPassword"class="form-control" placeholder="Password" >
+                </div>
+                <div *ngIf="control.cPassword.errors && control.cPassword.touched">
+                  <span *ngIf="control.cPassword.errors.required">
+                     Required
+                  </span>
+                 
+                 
+                 
+                </div>
+                <div *ngIf="control.password.touched && control.cPassword.touched">
+                  <span *ngIf="signupForm.hasError('notSame')">
+                    Passwords do not match
+                  </span> 
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+              </div>
+            </div>
+            <div class="row">
+              <div class="update ml-auto mr-auto">
+                <button type="submit" (click)="SignUser()" class="btn btn-primary btn-round">Sign-Up</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

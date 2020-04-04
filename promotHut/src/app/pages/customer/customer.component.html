@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card demo-icons">
+        <div class=" row card-header">
+          <h5 class="card-title">   &nbsp;&nbsp; Customer List</h5>
+        </div>
+<div  class="card-body">
+    <div class="table-responsive">
+      <table class="table">
+        <thead class=" text-primary">
+          <th>
+            Name
+          </th>
+          <th>
+            Phone No.
+          </th>
+          <th>
+           address
+          </th>
+          <th></th>
+          <th>
+           Total Order
+          </th>
+         
+        </thead>
+        <tbody>
+          <tr *ngFor="let cust of custArray">
+            <td>
+             {{cust.fName+' '+cust.lName}}
+            </td>
+            <td>
+              {{cust.phone}}
+            </td>
+            <td>
+              {{cust.add}}
+            </td>
+            <td></td>
+            <td style="color: #307c84;">
+              {{cust.totalOrder.length}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+</div>
