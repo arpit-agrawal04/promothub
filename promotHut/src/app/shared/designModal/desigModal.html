@@ -1,18 +1,153 @@
 <div class="modalDesign"><div class="modalHeader">
 Design Your Own NoteBook
 </div>
-<div class="modalBody">
-    <div class="col-md-10 col-xs-12"></div>
-    <div  class="col-md-2">
+<div class="modalBody col-md-12 row">
+    <div class="col-md-10 col-xs-12">
+        <form *ngIf="tab===1" [formGroup]='DesignForm'>
+            <div class="row">
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label>Phone Number </label>
+                    <input type="text" formControlName="phone"  class="form-control" placeholder="Phone No." >
+                  </div>
+                  <div *ngIf="control.phone.errors && control.phone.touched">
+                    <span *ngIf="control.phone.errors.required">
+                      Required
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-6 pl-1">
+                  <div class="form-group">
+                    <label>Best Define Your Business </label>
+                    <select formControlName="compnayType"  class="form-control">
+                      <option style="display: none;">Select Most Suted Option</option>  
+                      <option *ngFor="let item of bestDefine">{{item}}</option>  
+                    </select>
+                    </div>
+                 
+                  <div *ngIf="control.compnayType.errors && control.compnayType.touched">
+                    <span *ngIf="control.compnayType.errors.required">
+                      Required
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label>Email Id</label>
+                   
+                    <input type="text" formControlName="email"  class="form-control" placeholder="Email ID" >
+                  </div>
+                  <div *ngIf="control.email.errors && control.email.touched">
+                    <span *ngIf="control.email.errors.required">
+                      Required
+                    </span>
+                    <span *ngIf="control.email.errors.email">
+                      Invalid eamil
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-6 pl-1">
+                  <div class="form-group">
+                    <label>Marketing Objective</label>
+                    <select formControlName="marketing"  class="form-control">
+                      <option style="display: none;">Select Most Suted Option</option>  
+                      <option *ngFor="let item of markObjective">{{item}}</option>  
+
+                    </select>
+  
+                  </div>
+                  <div *ngIf="control.marketing.errors && control.marketing.touched">
+                    <span *ngIf="control.marketing.errors.required">
+                      Required
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label>Compnay Name </label>
+                    <input type="text" formControlName="compnay"  class="form-control" placeholder="Compnay Name" >
+                  </div>
+                  <div *ngIf="control.compnay.errors && control.compnay.touched">
+                    <span *ngIf="control.compnay.errors.required">
+                      Required
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-6 pl-1">
+                  <div class="form-group">
+                    <label>Number Of Employes</label>
+                    <select formControlName="employes"  class="form-control"  >
+                      <option style="display: none;">Select Most Suted Option</option>  
+                      <option *ngFor="let item of noEmp">{{item}}</option>  
+                    </select>
+                  </div>
+                  <div *ngIf="control.employes.errors && control.employes.touched">
+                    <span *ngIf="control.employes.errors.required">
+                      Required
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label>Do you have any on-going Offer </label>
+                    <input type="checkbox" formControlName="offer"  class="form-control"  >
+                  </div>
+                  <div *ngIf="control.offer.errors && control.offer.touched">
+                    <span *ngIf="control.offer.errors.required">
+                      Required
+                    </span>
+                  </div>
+                </div>
+                
+              </div>
+        </form>
+        <form *ngIf="tab===2" [formGroup]='DesignForm'>
+          <div class="row">
+            <div class="col-md-12 px-1">
+              <div class="form-group">
+                <label>Select Your Cover </label>
+                <input type="file" id="image" formControlName="phone" (change)="imageInserted($event)"  class="form-control" placeholder="Phone No." >
+              </div>
+             
+            </div>
+            
+           
+          </div>
+      
+           <div *ngIf="colorArray.length>0" class="row"><div class="col-md-6 pr-1">
+             <img *ngIf="colorArray.length>0&&setThisframe"  class="previewUploadedImage" [src]="imageSrc">
+             <img *ngIf="setThisframe==undefined"  class="previewUpImage" [src]="imageSrc">
+             <img *ngIf="setThisframe" class="previewFrame" [src]="'../../../assets/frames/'+setThisframe" >
+           </div><div class="col-md-6 pl-1"><div class="col-md-6 px-1" style="float: right;" *ngFor='let cBlok of colorArray'>
+            <div [style]="cBlok"></div></div>
+            <div class="col-md-12">Select More Colors</div>
+            <h5><div class="col-md-12" style="text-align: left !important;">Select Frame</div></h5>
+            <div style="width: 20%;" *ngFor="let frame of frameArray">
+              <img class="frame_option" (click)="setSelectedFrame(frame)"  [src]="'../../../assets/frames/'+frame">
+              <img class="frameOption_background"   [src]="imageSrc">
+            </div>
+            
+
+          </div></div>
+      </form>
+       
+    </div>
+    <div  class="col-md-2 col-xs-0">
         <div class="progressbar">
-            <div [ngClass]="{'progress1':false,'progress2':true}"></div>
+            <div [ngClass]="{'progress1':tab===1,'progress2':tab===2}"></div>
         </div>
     </div>
 
 </div>
 <div class="footerBody">
     <div style="float: right;">
-        <button class="btn btn-primary">back</button><button  class="btn btn-submit">next</button>
+        <button class="btn btn-primary" (click)="tab=tab-1" [disabled]="tab===1">back</button><button (click)="nextStep()" class="btn btn-submit">next</button>
     </div>
 
 

@@ -15,11 +15,9 @@ export class ApiService {
   }
   midWare(type, url, data) {
     this.token = localStorage.getItem('token')
-     data.userId = localStorage.getItem('id');
-     data.compny = localStorage.getItem('company');
-     const headers = new HttpHeaders({'x-access-token': this.token});
+
       if (type === 'post') {
-        this.brew = this.http.post(this.apiUrl + 'api/' + url, data, { headers: headers})
+        this.brew = this.http.post(this.apiUrl + 'api/' + url, data)
       }
         if (!this.brew.sucess && this.brew.message === 'invalid token') {
             this.router.navigateByUrl('/login')

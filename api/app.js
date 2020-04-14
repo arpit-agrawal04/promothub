@@ -14,13 +14,15 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(cors({
-  origin: clientUrl,
+  origin: '*',
 }))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+const bodyParser= require('body-parser')
+const multer = require('multer');
 
 app.use('/auth', indexRouter);
 app.use('/api', usersRouter);
@@ -29,7 +31,7 @@ app.use('/api', usersRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
+app.use(bodyParser.urlencoded({extended: true}))
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development

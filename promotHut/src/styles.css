@@ -19,7 +19,7 @@
     cursor: pointer;
 }
 .logo_hut {
-    width: 22%;
+    width: 30%;
 margin-left: 9%;
 }
 .header{
@@ -57,20 +57,20 @@ h1, .h1 {
         }
 
         .modalDesign {
-            height: 500px;
-           
+        
+           min-height: 500px;
         }
         .modalBody{
             padding: 3%;
             text-align: center;
             width: 100%;
         }
-        .modalHeader{
+        .modalHeader {
             background: linear-gradient(-135deg, #c850c0, #4158d0);
             color: white;
             padding: 1%;
-            height: 40px;
-            font-size: 18px;
+            height: 63%;
+            font-size: 142%;
             font-weight: bold;
         }
         .footerBody{
@@ -87,6 +87,7 @@ h1, .h1 {
 width: 35px;
 background-color: #e3dfdf47;
 border: 2px solid #dfdfdf;
+margin: 0 auto;
         }
         .progress1{
             width: 31px;
@@ -98,3 +99,32 @@ border: 2px solid #dfdfdf;
             height: 100px;
             background: linear-gradient(-135deg, #c850c0, #4158d0);
         }
+        .frameOption_background {
+            position: relative;
+            z-index: 2;
+            margin: 4px 0;
+        }
+        .frame_option {
+            position: absolute;
+            width: 20%;
+            z-index: 4;
+        }
+        .previewUploadedImage {
+            position: absolute;
+            z-index: 1;
+            width: 65%;
+        }
+        .previewFrame {
+
+            position: relative;
+            z-index: 4;
+            height: 300px;
+            border: 20px solid white;
+        
+        }
+        .previewUpImage {
+            position: relative;
+            z-index: 1;
+            width: 70%;
+        }
+        

@@ -4,7 +4,7 @@
 promotHut/dist
 promotHut/tmp
 promotHut/out-tsc
-
+uploads
 # dependencies
 promotHut/node_modules
 api/node_modules
